@@ -90,21 +90,13 @@ int main(int argc, char *argv[]) {
         return EXIT_FAILURE;
     }
 
-    // --- 6. Verificar si quedan argumentos posicionales inesperados después de la opción ---
-    if (optind < argc) {
-        fprintf(stderr, "Advertencia: Se encontraron parametros adicionales y seran ignorados:\n");
-        for (int i = optind; i < argc; i++) {
-            fprintf(stderr, "  '%s'\n", argv[i]);
-        }
-    }
-
-    // --- 7. Resumen y Continuación de la lógica de la tarea ---
+    // --- 6. Resumen y Continuación de la lógica de la tarea ---
     printf("\n--- Parametros obtenidos ---\n");
     printf("Cantidad de personas: %d\n", cantidadPersonas);
     printf("Tipo de registro: '%c'\n", tipoRegistro);
     printf("--------------------------\n\n");
 
-    // --- 8. Lógica para manejar los registros de personas ---
+    // --- 7. Lógica para manejar los registros de personas ---
     if (tipoRegistro == 'p') {
         // Solo profesores
         for (int i = 0; i < cantidadPersonas; i++) {
